@@ -10,7 +10,7 @@ export default class Welcome extends React.Component {
     );
   }
   static defaultProps = {
-    name: "Gigi",
+    name: <strong>Gigi</strong>,
     age: 28,
   };
 }
