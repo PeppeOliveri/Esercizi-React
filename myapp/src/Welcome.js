@@ -6,7 +6,7 @@ export default class Welcome extends React.Component {
     return (
       <div>
         <p>
-          Welcome, {this.props.name} <Age age="1" />
+          Welcome, {this.props.name} <Age age="44" />
         </p>
       </div>
     );
