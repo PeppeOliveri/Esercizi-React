@@ -10,7 +10,7 @@ export default class Welcome extends React.Component {
         ) : (
           <p>Invalid username</p>
         )}
-        <Age age="33" />
+        <Age age="3" />
       </div>
     );
   }
