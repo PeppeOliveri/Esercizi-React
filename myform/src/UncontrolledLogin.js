@@ -14,7 +14,7 @@ export default class UncontrolledLogin extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleForm}>
-          <input name="username" type={Text}></input>
+          <input name="username" type={Text} autoFocus></input>
           <input name="password" type={"password"}></input>
           <button type="submit">Login</button>
           <button type="reset">Reset</button>
