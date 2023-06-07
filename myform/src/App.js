@@ -1,12 +1,21 @@
-import Login from "./Login";
-import UncontrolledLogin from "./UncontrolledLogin";
+import TodoList from "./TodoList";
 
 function App() {
   return (
     <div>
-      <UncontrolledLogin />
-      <br></br>
-      <Login />
+      <TodoList
+        fruits={[
+          "apple",
+          "banana",
+          "orange",
+          "mango",
+          "grape",
+          "kiwi",
+          "pineapple",
+          "strawberry",
+          "watermelon",
+        ]}
+      />
     </div>
   );
 }
