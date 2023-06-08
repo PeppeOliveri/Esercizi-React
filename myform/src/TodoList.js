@@ -8,7 +8,7 @@ export default class TodoList extends React.Component {
 
   addItem = () => {
     this.setState((state) => {
-      return { items: [...this.state.items, this.state.value] };
+      return { items: [...this.state.items, this.state.value], value: "" };
     });
   };
   handleInput = (event) => {
@@ -21,7 +21,11 @@ export default class TodoList extends React.Component {
     const item = this.state.items.map((item) => <li>{item}</li>);
     return (
       <div>
-        <input onChange={this.handleInput} type={Text}></input>
+        <input
+          onChange={this.handleInput}
+          type={Text}
+          value={this.state.value}
+        ></input>
         <button onClick={this.addItem}>Add item</button>
         <ul>{item}</ul>
       </div>
