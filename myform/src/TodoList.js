@@ -17,6 +17,12 @@ export default class TodoList extends React.Component {
     });
   };
 
+  clearArray = () => {
+    this.setState((state) => {
+      return { items: [] };
+    });
+  };
+
   render() {
     const item = this.state.items.map((item) => <li>{item}</li>);
     return (
@@ -27,6 +33,7 @@ export default class TodoList extends React.Component {
           value={this.state.value}
         ></input>
         <button onClick={this.addItem}>Add item</button>
+        <button onClick={this.clearArray}>Clear items</button>
         <ul>{item}</ul>
       </div>
     );
