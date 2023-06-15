@@ -1,3 +1,4 @@
+import Language from "./Language";
 import TodoList from "./TodoList";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           );
         }}
       />
+      <Language />
     </div>
   );
 }

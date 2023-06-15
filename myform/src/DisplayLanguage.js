@@ -16,7 +16,11 @@ export default class DisplayLanguage extends React.Component {
       <div>
         <LanguageContext.Consumer>
           {(language) => {
-            return <div>{strings[language].LanguageDisplay}</div>;
+            return (
+              <div>
+                <h1>{strings[language].LanguageDisplay}</h1>
+              </div>
+            );
           }}
         </LanguageContext.Consumer>
       </div>
