@@ -2,7 +2,7 @@ import React from "react";
 
 export default class TodoList extends React.Component {
   state = {
-    items: ["pen", "gum", "phone"],
+    items: ["pen", "milk", "phone"],
     value: "",
   };
 
@@ -23,15 +23,22 @@ export default class TodoList extends React.Component {
     });
   };
 
+  removeItem = () => {
+    this.setState({
+      items: this.state.items.splice(1),
+    });
+  };
+
   render() {
-    const item = this.state.items.map((item) => <li>{item}</li>);
+    const item = this.state.items.map((item) => (
+      <li key={item.toString()}>
+        {item}
+        <button onClick={this.removeItem}>Remove</button>
+      </li>
+    ));
     return (
       <div>
-        <input
-          onChange={this.handleInput}
-          type={Text}
-          value={this.state.value}
-        ></input>
+        <input onChange={this.handleInput} value={this.state.value}></input>
         <button onClick={this.addItem}>Add item</button>
         <button onClick={this.clearArray}>Clear items</button>
         <ul>{item}</ul>
