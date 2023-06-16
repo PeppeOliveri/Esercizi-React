@@ -11,6 +11,16 @@ export function HookCounter({ initialValue = 0 }) {
     console.log("the counter is now: " + counter);
   }, [counter]);
 
+  useEffect(() => {
+    const int = setInterval(() => {
+      setCounter(0);
+    }, 3000);
+
+    return () => {
+      clearInterval(int);
+    };
+  }, [counter]);
+
   return (
     <div>
       <h2>Counter: {counter}</h2>
