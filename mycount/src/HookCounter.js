@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function HookCounter({ initialValue = 0 }) {
   const [counter, setCounter] = useState(initialValue);
@@ -6,6 +6,10 @@ export function HookCounter({ initialValue = 0 }) {
   function handleIncrement() {
     setCounter((c) => c + 1);
   }
+
+  useEffect(() => {
+    console.log("the counter is now: " + counter);
+  }, [counter]);
 
   return (
     <div>
