@@ -1,30 +1,14 @@
-import { useEffect, useState } from "react";
+import useCounter from "./UseCounter";
 
-export function HookCounter({ initialValue = 0 }) {
-  const [counter, setCounter] = useState(initialValue);
-
-  function handleIncrement() {
-    setCounter((c) => c + 1);
-  }
-
-  useEffect(() => {
-    console.log("the counter is now: " + counter);
-  }, [counter]);
-
-  useEffect(() => {
-    const int = setInterval(() => {
-      setCounter(0);
-    }, 3000);
-
-    return () => {
-      clearInterval(int);
-    };
-  }, [counter]);
+export default function Counter({ initValue = 0 }) {
+  const { counter, onIncrement, onDecrement, onReset } = useCounter(initValue);
 
   return (
     <div>
-      <h2>Counter: {counter}</h2>
-      <button onClick={handleIncrement}>Increment</button>
+      <h1>Count: {counter}</h1>
+      <button onClick={onIncrement}>Add</button>
+      <button onClick={onDecrement}>Remove</button> <br />
+      <button onClick={onReset}>Reset</button>
     </div>
   );
 }
