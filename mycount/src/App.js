@@ -1,5 +1,6 @@
 import React from "react";
-import { GithubUser } from "./GithubUser";
+// import { GithubUser } from "./GithubUser";
+import { GithubUserList } from "./GithubUserList";
 // import ClickCounter from "./ClickCounter";
 // import { HookCounter } from "./HookCounter";
 
@@ -8,7 +9,8 @@ function App() {
     <div>
       {/* <ClickCounter /> */}
       {/* <HookCounter /> */}
-      <GithubUser username="PeppeOliveri" />
+      {/* <GithubUser username="PeppeOliveri" /> */}
+      <GithubUserList />
     </div>
   );
 }
