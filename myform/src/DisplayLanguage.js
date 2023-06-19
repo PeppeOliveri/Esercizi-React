@@ -1,5 +1,6 @@
 import React from "react";
 import { LanguageContext } from "./LanguageContext";
+import { useContext } from "react";
 
 const strings = {
   en: {
@@ -10,20 +11,12 @@ const strings = {
   },
 };
 
-export default class DisplayLanguage extends React.Component {
-  render() {
-    return (
-      <div>
-        <LanguageContext.Consumer>
-          {(language) => {
-            return (
-              <div>
-                <h1>{strings[language].LanguageDisplay}</h1>
-              </div>
-            );
-          }}
-        </LanguageContext.Consumer>
-      </div>
-    );
-  }
+export default function DisplayLanguage() {
+  const language = useContext(LanguageContext);
+
+  return (
+    <div>
+      <h1>{strings[language].LanguageDisplay}</h1>
+    </div>
+  );
 }

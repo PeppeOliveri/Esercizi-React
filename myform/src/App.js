@@ -1,10 +1,10 @@
 import Language from "./Language";
-import TodoList from "./TodoList";
+// import TodoList from "./TodoList";
 
 function App() {
   return (
     <div>
-      <TodoList
+      {/* <TodoList
         render={(items, removeItem) => {
           return (
             <div>
@@ -17,7 +17,7 @@ function App() {
             </div>
           );
         }}
-      />
+      /> */}
       <Language />
     </div>
   );
