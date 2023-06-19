@@ -1,5 +1,5 @@
 import React from "react";
-import { GithubUser } from "./GithubUser";
+import GithubUser from "./GithubUser";
 // import ClickCounter from "./ClickCounter";
 // import { HookCounter } from "./HookCounter";
 
