@@ -1,16 +1,17 @@
 import React from "react";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
-import GithubUser from "./GithubUser";
-import ShowGithub from "./ShowGithub";
+import Page1 from "./Page1";
+import Page2 from "./Page2";
+import Page3 from "./Page3";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<ShowGithub />} />
-        <Route path="/:users:username" element={<ShowGithub />} />
-        <Route path="/:username" element={<GithubUser />} />
+        <Route path="/" element={<Page1 />} />
+        <Route path="/page2" element={<Page2 />} />
+        <Route path="/page3" element={<Page3 />} />
       </Routes>
     </>
   );
