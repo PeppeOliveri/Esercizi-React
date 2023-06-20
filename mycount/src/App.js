@@ -1,15 +1,15 @@
 import React from "react";
-// import GithubUser from "./GithubUser";
-// import ClickCounter from "./ClickCounter";
-// import { HookCounter } from "./HookCounter";
+import { HookCounter } from "./HookCounter";
+import { Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      {/* <ClickCounter /> */}
-      {/* <HookCounter /> */}
-      {/* <GithubUser username="PeppeOliveri" /> */}
-    </div>
+    <>
+      <Routes>
+        <Route path="/counter" element={<HookCounter />} />
+      </Routes>
+    </>
   );
 }
 
