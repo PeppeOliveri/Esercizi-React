@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
-import { UseGithubUser } from "./UseGithubUser";
+import GithubUser from "./GithubUser";
 import ShowGithub from "./ShowGithub";
 
 function App() {
@@ -9,8 +9,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<ShowGithub />} />
-        <Route path="/users:username" element={<ShowGithub />} />
-        <Route path="/:username" element={<UseGithubUser />} />
+        <Route path="/:users:username" element={<ShowGithub />} />
+        <Route path="/:username" element={<GithubUser />} />
       </Routes>
     </>
   );

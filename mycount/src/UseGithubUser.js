@@ -1,28 +1,18 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router";
 
-export function UseGithubUser({ username }) {
+export function UseGithubUser() {
   const [data, setData] = useState();
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState();
+  const { data: username = "PeppeOliveri" } = useParams();
 
   useEffect(() => {
-    setLoading(true);
-    setError(null);
-
     async function fetchUser() {
-      try {
-        const res = await fetch(`https://api.github.com/users/${username}`);
-        const json = await res.json();
-        setData(json);
-      } catch {
-        setError();
-        setData(null);
-      } finally {
-        setLoading(false);
-      }
+      const res = await fetch(`https://api.github.com/users/${username}`);
+      const json = await res.json();
+      setData(json);
     }
     fetchUser();
   }, [username]);
 
-  return { data, loading, error };
+  return { data };
 }
