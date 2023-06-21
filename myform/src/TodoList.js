@@ -22,26 +22,20 @@ export default class TodoList extends React.Component {
       return { items: [] };
     });
   };
-
-  removeItem = () => {
-    this.setState({
-      items: this.state.items.splice(1),
+  removeItem = (index) => {
+    const remove = this.state.items.filter((element, i) => {
+      return i !== index;
     });
+    this.setState({ items: remove });
   };
 
   render() {
-    // const item = this.state.items.map((item) => (
-    //   <li key={item.toString()}>
-    //     {item}
-    //     <button onClick={this.removeItem}>Remove</button>
-    //   </li>
-    // ));
     return (
       <div>
         <input onChange={this.handleInput} value={this.state.value}></input>
         <button onClick={this.addItem}>Add item</button>
         <button onClick={this.clearArray}>Clear items</button>
-        <ul>{this.props.render(this.state.items, this.removeItem)}</ul>
+        {this.props.render(this.state.items, this.removeItem)}
       </div>
     );
   }

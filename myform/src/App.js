@@ -7,14 +7,14 @@ function App() {
       <TodoList
         render={(items, removeItem) => {
           return (
-            <div>
-              {items.map((item) => (
-                <li key={item.toString()}>
+            <ul>
+              {items.map((item, index) => (
+                <li key={index}>
                   {item}
-                  <button onClick={removeItem}>Remove</button>
+                  <button onClick={() => removeItem(index)}>Remove</button>
                 </li>
               ))}
-            </div>
+            </ul>
           );
         }}
       />
