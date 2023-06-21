@@ -23,17 +23,18 @@ export default class TodoList extends React.Component {
     });
   };
 
-  removeItem = () => {
-    this.setState({
-      items: this.state.items.splice(1),
+  removeItem = (index) => {
+    const remove = this.state.items.filter((element, i) => {
+      return i !== index;
     });
+    this.setState({ items: remove });
   };
 
   render() {
-    const item = this.state.items.map((item) => (
-      <li key={item.toString()}>
+    const item = this.state.items.map((item, index) => (
+      <li key={index}>
         {item}
-        <button onClick={this.removeItem}>Remove</button>
+        <button onClick={() => this.removeItem(index)}>Remove</button>
       </li>
     ));
     return (
